@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>
+  h1{
+   text-align: center;
+  font-family: verdana;
+  background-color: yellow;  
+  }
+  h3{
+      font-family: verdana;
+  }
+  body{
+  height: 100%;
+   background-image: url("airpollution1.jpg");
+  }
+  </style>
+  
+
+</head>
+
+<body>
+<h1>Air pollution detection</h1>
+<div  style="background-image: url('/static/images (1).jpg');background:black;color:white;">
+<div>
+<h3>About Team</h3>
+<h2>
+Mentor: Mrs P.Shyamala Madhuri</br>
+Name: B.yeswanth</br>
+Name: Ch.Alekhya</br>
+Name: D M Aditya</br>
+Name: Ch sreeja</h2>
+</div>
+<div>
+<h3>Introduction</h3>
+<p>Air pollution is one of the most important environmental issues in both developed
+and developing countries. The distribution of air-pollution involves a complex process
+depending on a number of factors. In fact, air pollution prediction, which has a non-linear
+dynamism, is a very difficult task and requires a close understanding of the dispersion of air
+pollutants in the atmosphere, which involves an immense cost. In some cases, air pollution
+in mega cities even exceeds the standard limit which increases the concerns. For this reason,
+air pollution has become a problem in many cities in the world and its investigation is
+considered as a vital issue in urban management.
+The pollution information includes the density of daily CO and C 6 H 6  pollutants
+which can be announced to the concerned people by city managers as a response to the air
+pollution. This information may assist people to avoid the polluted areas and employ public
+transport facilities to reduce the level of the pollution. In addition, the concerned city
+managers can implement the information to control the urban traffic and the responsible
+pollutant industries and to increase public transport facilities in order to mitigate the level of
+the pollution.
+To achieve this goal, appropriate tools need to be used to predict air pollution. Until
+now, there are many methods proposed for air quality prediction. The method established in
+our project to determine the harmful pollutant C 6 H 6 from the other gases concentration.
+Since determining the amount of benzene is difficult, we use other gases to determine it.</p>
+<h3>About dataset</h3>
+<p>The dataset contains 9358 instances of hourly averaged responses from an array of 5 metal oxide chemical sensors embedded in an Air Quality Chemical Multisensor Device. The device was located on the field in a significantly polluted area, at road level , within an Italian city. Data were recorded from March 2004 to February 2005 (one year)representing the longest freely available recordings of on field deployed air quality chemical sensor devices responses. Ground Truth hourly averaged concentrations for CO, Non Metanic Hydrocarbons, Benzene, Total Nitrogen Oxides (NOx) and Nitrogen Dioxide (NO2) and were provided by a co-located reference certified  analyzer. Evidences of cross-sensitivities as well as both concept and sensor drifts are present as described in De Vito et al., Sens. And Act. B, Vol. 129,2,2008 (citation required) eventually affecting sensors concentration estimation capabilities.Missing values are tagged with -200 value. This dataset can be used exclusively for research purposes. Commercial purposes are fully excluded.</p>
+<h3>ML Models used</h3>
+<p>Linear Regression is a machine learning algorithm based on supervised learning. It performs a regression task. Regression models a target prediction value based on independent variables. It is mostly used for finding out the relationship between variables and forecasting. Different regression models differ based on – the kind of relationship between dependent and independent variables, they are considering and the number of independent variables being used.Linear regression performs the task to predict a dependent variable value (y) based on a given independent variable (x). So, this regression technique finds out a linear relationship between x (input) and y(output). Hence, the name is Linear Regression.
+In the figure above, X (input) is the work experience and Y (output) is the salary of a person. The regression line is the best fit line for our model.</p>
+</div>
+</div>
+<div  style="background-image: url('/static/images (1).jpg');background:black;color:white;">
+<p>A Random Forest is an ensemble technique capable of performing both regression and classification tasks with the use of multiple decision trees and a technique called Bootstrap Aggregation, commonly known as bagging. The basic idea behind this is to combine multiple decision trees in determining the final output rather than relying on individual decision trees.
+Approach :
+
+Pick at random K data points from the training set.
+Build the decision tree associated with those K data points.
+Choose the number Ntree of trees you want to build and repeat step 1 & 2.
+For a new data point, make each one of your Ntree trees predict the value of Y for the data point, and assign the new data point the average across all of the predicted Y values.</p>
+<p>Decision Tree is a decision-making tool that uses a flowchart-like tree structure or is a model of decisions and all of their possible results, including outcomes, input costs and utility.
+
+Decision-tree algorithm falls under the category of supervised learning algorithms. It works for both continuous as well as categorical output variables.
+
+The branches/edges represent the result of the node and the nodes have either:The branches/edges represent the truth/falsity of the statement and takes makes a decision based on that in the example below which shows a decision tree that evaluates the smallest of three numbers:</p>
+<p>XGBoost is an implementation of Gradient Boosted decision trees. This library was written in C++. It is a type of Software library that was designed basically to improve speed and model performance. It has recently been dominating in applied machine learning. XGBoost models majorly dominate in many Kaggle Competitions.
+
+In this algorithm, decision trees are created in sequential form. Weights play an important role in XGBoost. Weights are assigned to all the independent variables which are then fed into the decision tree which predicts results. Weight of variables predicted wrong by the tree is increased and these the variables are then fed to the second decision tree. These individual classifiers/predictors then ensemble to give a strong and more precise model. It can work on regression, classification, ranking, and user-defined prediction problems.</p>
+<a style="text-size:100px;position:fixed;top:5px;right:20px;color:black;" href="http://127.0.0.1:5000/">home</a>
+</body>
+</html>

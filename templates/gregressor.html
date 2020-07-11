@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>
+  .heading{
+   
+    text-align: center;
+    font-family: verdana;
+  }
+    .submit
+    {
+    background-color: yellow;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align:center;
+    margin-left:50%;
+    
+    }
+    input[type=text]
+    {
+      width: 25%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .login{
+      border-radius: 5px;
+      color: black;
+     
+      padding: 20px;
+    }
+    .ans{
+    font-size:40px;
+     text-align: center;
+     color:white;
+    }
+  
+
+    </style>
+</head>
+
+<body>
+
+<div class="heading">
+<h1>Predict Amount of C6H6 Using GradientBoostingRegressor</h1>
+
+</div>
+
+ <div class="login" style="background-image: url('/static/sky.jpg');background-size:cover;">
+    
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predictGRR')}}"method="post" style="color:white">
+    	<input type="text" value=3 name="Co(GT)" placeholder="Co(GT)" required="required" />Co(GT)
+        
+		
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" value=1360 Step=any name="PT08.S1(CO)" placeholder="PT08.S1(CO)" required="required" />(CO)PT08.s1
+        <br>
+		<input type="text" value=1046 name="PT08.S2(NMHC)" placeholder="PT08.S2(NMHC)" required="required" />PT08.S2(NMHC)
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" value=166 name="NOx(GT)" placeholder="NOx(GT)" required="required" />Nox(GT)
+        <br>
+        <input type="text" value=1056 name="PT08.S3(NOx)" placeholder="PT08.S3(NOx)" required="required" />PT08.S3(NOx)
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" value=113 name="NO2(GT)" placeholder="NO2(GT)" required="required" />NO2
+		<br>
+		<input type="text" value=1692 name="PT08.S4(NO2)" placeholder="PT08.S4(NO2)" required="required" />PT08.S4(NO2)
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp<input type="text" value=1268 name="PT08.S5(O3)" placeholder="PT08.S5(O3)" required="required" />:Pt08.S5(O3)
+        <br>
+		<input type="text" value=14 name="T" placeholder="T" required="required" />T
+		
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" value=49 name="RH" placeholder="RH" required="required" />RH
+        <br>
+        <input type="text" value=1 name="AH" placeholder="AH" required="required" />Ah
+        <br>
+        <button class ="submit" type="submit">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <div class= ans>
+   {{ prediction_text }}
+   </div>
+   <br>
+   <a style="text-size:100px;position:fixed;top:5px;right:20px;color:black;" href="http://127.0.0.1:5000/">home</a>
+    <br>
+    <a style="text-size:100px;position:fixed;top:5px;right:80px;color:black;" href="{{ url_for('about') }}">About</a>
+ </div>
+
+ 
+
+
+</body>
+</html>

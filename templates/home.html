@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+    <style>
+    .submit{
+    background-color: #4CAF50;
+    text-align:ecnter;
+    font-size:16px;
+    margin:4px 2px;
+    cursor:pointer;
+    padding:15px 32px;
+    border-radius:12px;
+    }
+    </style>
+</head>
+
+<body style="background-image: url('/static/chess.jpg');background-size:cover">
+
+<div class="heading">
+<h1 style="color:white;text-align:center;">Predict Amount of C6H6</h1>
+
+</div>
+
+ <div>
+  
+    
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predictLR')}}"method="post">
+    	
+        <button class ="submit" type="submit">Liner Regression&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+        
+    </form>
+    <form action="{{ url_for('predictDR')}}"method="post">
+    	
+        <button class ="submit" type="submit">Decision Tree Regression&nbsp&nbsp</button>
+        
+    </form>
+    <form action="{{ url_for('predictRR')}}"method="post">
+    	
+        <button class ="submit" type="submit">Random Forest Regressor&nbsp&nbsp</button>
+        
+    </form>
+     <form action="{{ url_for('predictGR')}}"method="post">
+    	
+        <button class ="submit" type="submit">GradientBoostingRegressor</button>
+        
+    </form>
+     
+   <br>
+   
+   
+    <br>
+    <a style="text-size:100px;position:fixed;top:5px;right:80px;color:white;" href="{{ url_for('about') }}">About</a>
+ </div>
+
+ 
+
+
+</body>
+</html>
