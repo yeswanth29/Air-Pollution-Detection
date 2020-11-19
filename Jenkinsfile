@@ -2,7 +2,7 @@ pipeline
 {
 agent any
 parameters{
-choice( name="version",choices:['1.01','1.02'],description:'')
+Choice( name="version",choices:['1.01','1.02'],description:'')
 }
 stages{
 stage("build"){
